@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<dos.h>
+       //the diff a \n creates is diif from what " " creates
+void q1(int a,int b){		     //we take 1(\n)=2*(" ")
+int i,j,k,x,y;
+for(j=1;25>=j;j++){                                       //given in tp1
+printf("\n");
+}
+for(k=1;2*a>=k;k++){
+printf(" ");               //it seems th esize of space and /n not similar
+}
+printf("@"); //obj
+for(k=1;b>=k;k++){
+printf("\n");
+}
+//getch();
+}
+
+
+
+
+
+void main(){
+long double b,theta;
+double x,y,j,v,t,acc,myr,ymax;
+int yi,xi;
+scanf("%lf%lf%Lf",&v,&acc,&theta);
+
+
+
+//this is for theta to radian
+b= ((2.0L*3.1415L)/360.0L)*theta;
+myr=(double)b;
+
+
+
+
+//this is for rounding off
+/*if(c<0){
+c=c*(double)1.0; }
+if(c>=((int)c+(double)0.5)){
+j=ceil(c);
+printf("\n%f",j);          }
+else{
+j=floor(c);
+printf("\n%f",j);}
+*/
+//y and x coordinate
+
+// input condition
+if(sqrt((double)48*acc)>=v*sin(myr)){
+
+ymax=(v*v*sin(myr)*sin(myr))/(2*acc);
+for(t=0;((double)2*v*sin(myr))/acc>=t;t++){
+//x coordinate
+x=v*cos(myr)*t;
+
+//y coordinate
+if((v*sin(myr))/acc>=t){
+y=(v*sin(myr)*t)-((acc*t*t)/(double)2);
+}
+else{
+y=(v*sin(myr)*t)-((acc*t*t)/(double)2);}      /* another good realization that
+ y=(v*sin(myr)*t)-((acc*t*t)/(double)2 this thing gives the cooordinate y even after reaching top point
+  before this use ymax - half*a*t^2 for that which will not work as here t is is at top
+  hence time is taken to start from there */
+
+//rounding off x
+if(x>=((int)x+(double)0.5)){
+xi=ceil(x);
+	 }
+else{
+xi=floor(x);
+  }
+
+//round off y
+if(y>=((int)y+(double)0.5)){
+yi=ceil(y);
+	  }
+else{
+yi=floor(y);
+	  }
+
+//print the point
+q1(xi,yi);
+delay(200);
+}
+}
+else{
+printf("data entered is wrong");
+}
+//through test use lf for double
+//you dont necessarily have to write (double)number for every calc
+/*whille making the code to convert theta to myr
+((2.0L*3.1415L)/360.0L)*theta
+here theta is taken as long double(format spec %Lf)
+here (2.0L*3.1415L)*(theta/360)   didnt work dont know why
+			       */
+//this is so that it seems as that the ball reaches the ground
+x=((v*v*sin((double)2*myr)))/acc;
+if(x>=((int)x+(double)0.5)){
+xi=ceil(x);
+	 }
+else{
+xi=floor(x);
+  }
+q1(xi,0);
+getch();
+}
+
