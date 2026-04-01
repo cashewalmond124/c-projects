@@ -87,20 +87,6 @@ getch();
 }                    
 
 
-/*
-int i,j,k;
-for(i=10;80>=i;i=i+10){
-for(j=1;25>=j;j++){
-printf("\n");
-}
 
-//lineth(10+i,5);
-linethh(10+i,i);
-printf("\n %d",10+i);
-getch();           }
-		       
-
-getch();
-*/
 
 }
