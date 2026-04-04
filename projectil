@@ -91,6 +91,7 @@ delay(200);
 else{
 printf("data entered is wrong");
 }
+
 //through test use lf for double
 //you dont necessarily have to write (double)number for every calc
 /*whille making the code to convert theta to myr
